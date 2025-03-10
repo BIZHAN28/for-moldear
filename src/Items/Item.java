@@ -12,4 +12,22 @@ public abstract class Item {
     }
 
     public abstract void use(Human human);
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Item) {
+            return this.name.equals(((Item) o).name);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return this.name.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
+    }
 }

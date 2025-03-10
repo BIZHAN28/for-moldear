@@ -1,5 +1,6 @@
 package Humans;
 
+import Humans.Persons.Begay;
 import Items.Clothes;
 import Items.Item;
 import Items.Storage;
@@ -64,6 +65,24 @@ public abstract class Human {
 
     public void openStorage(Storage storage) {
         storage.use(this);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Human) {
+            return this.getHumanData().name().equals(((Human) o).getHumanData().name());
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return this.getHumanData().name().hashCode() + this.getHumanData().sex().hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return this.getHumanData().name() + " " + this.getHumanData().sex();
     }
 
 }

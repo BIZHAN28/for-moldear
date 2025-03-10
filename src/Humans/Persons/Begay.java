@@ -9,6 +9,8 @@ import Items.Item;
 import Items.Storage;
 import Location.Location;
 
+import java.util.Objects;
+
 public class Begay extends Human implements Clubbable {
 
     public Begay() {
